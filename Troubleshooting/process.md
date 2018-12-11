@@ -25,6 +25,11 @@
             4. 500 - Server Error processing request
     3. SSL 
         1. failed handshakes
+            - sclient 
+            ```Testing HTTPS Services Using "openssl s_client -connect" Command
+            The following command can be used to test connectivity to an https service.
+            openssl s_client -connect <hostname>:<port>
+            ``` 
         2. protocol version
             1. 1.0
             2. 1.1
@@ -43,6 +48,11 @@
 7. TCPdumps
     1. capture interface or vlan
     2. clear text
+    3. Resets
+    ```
+    tcpdump -s0 -nn -i 0.0:nnn 'tcp[tcpflags] & (tcp-rst) != 0'
+    ```
 8. SSLdumps
     1. askf5 SOLs
-    2. keylog
+        1. irule secrets 
+            - https://support.f5.com/csp/article/K16700
